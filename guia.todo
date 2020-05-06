@@ -1,0 +1,73 @@
+1 - Banco de dados - MySQL
+    ☐ Criar SCHEMA
+    ☐ Diagrama de Relações
+    ☐ Gerar Banco
+
+2 - Front End - HTML + CSS
+    ☐ index.html: Carrossel + NavBar
+    ☐ painel.html: Add, Busca, Editar
+    ☐ painel-search.html: Card dos Pets
+
+3 - Criar estrutura de projeto Express + EJS
+    ☐ Instalar express global
+    npm install -g express-generator
+    ☐ Criar pasta do projeto com estrutura EJS
+    express nome-projeto --ejs
+    ☐ Instalar dependências na pasta do projeto
+    cd nome-projeto
+    npm install
+    ☐ Instalar nodemon
+    npm install nodemon -g --save
+    trocar "start": "nodemon ./bin/www"
+
+4 - Controllers e Rotas
+    ☐ Controller Básico
+    (req, res) => res.render('view')
+    ☐ Rotas Básicas
+    ('/', controller.function)
+
+5 - Sequelize e dotenv
+    ☐ Instalar Sequelize
+    npm install sequelize --save
+    ☐ Instalar Sequelize-CLI
+    npm install -D sequelize-cli --save
+    ☐ Instalar dotenv
+    npm install dotenv --save
+    ☐ Instalar mysql2
+    npm install mysql2 --save
+
+6 - Sequelize Config
+    ☐ Criar estrutura Sequelize: config, models, seeders, migrations
+    npx sequelize-cli init
+    ☐ Configurar database/config.js
+    user, password, database, host, dialect
+    ☐ Criar .sequelizerc
+    trocar plain-text > javascript se necessário
+    module.exports > path de config e models
+    ☐ Configurar .env (OPCIONAL)
+
+7 - Models
+    ☐ Criar Models: Pet, Raça, Tipo
+    ☐ Criar testePet.js (Opcional)
+    console.log dos pets > "SELECT * FROM pets"
+    ☐ Adicionar relações dos models
+    ☐ Atualizar testePet.js(Opcional)
+    Além de mostrar todos os pets, mostrará junto o tipo e a raça
+    ☐ Implementar lógica no controller
+    Utilizar a lógica do testePet.js
+
+8 - EJS
+    ☐ Implementar loop e dados no card do pet
+
+    
+
+
+
+
+
+
+
+
+
+
+       

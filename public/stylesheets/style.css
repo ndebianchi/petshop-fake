@@ -1,0 +1,18 @@
+.card-alto {
+    background-color: #9917b3;
+    color: white;
+    height: 300px;
+    width: 40%;
+}
+
+.card-body {
+    background-color: #9917b3;
+    color: white;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vw;
+    object-fit: cover;
+    
+}

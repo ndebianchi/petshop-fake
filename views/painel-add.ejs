@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Pet Shop</title>
+</head>
+
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #9917b3;">
+        <a class="navbar-brand" href="#">Pet Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="#">Serviços</a>
+            <a class="nav-item nav-link active" href="/painel">Painel</a>            
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main -->
+
+      <main>
+        <section class="container">
+
+          <form class="form-horizontal" action="/addpet" method="POST">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>Novo Pet</legend>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="nome">Nome</label>  
+              <div class="col-md-5">
+              <input id="nome" name="nome" type="text" placeholder="Doguinho" class="form-control input-md" required="">
+                
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="idade">Anos</label>  
+              <div class="col-md-5">
+              <input id="idade" name="idade" type="text" placeholder="2" class="form-control input-md" required="">
+                
+              </div>
+            </div>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="foto">Foto</label>  
+              <div class="col-md-5">
+              <input id="foto" name="foto" type="text" placeholder="<Nome do arquivo>" class="form-control input-md">
+                
+              </div>
+            </div>
+            
+            <!-- Multiple Checkboxes -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="genero">Sexo</label>
+              <div class="col-md-4">
+              <div class="checkbox">
+                <label for="genero-0">
+                  <input type="checkbox" name="genero" id="genero-0" value="Macho">
+                  Macho
+                </label>
+              </div>
+              <div class="checkbox">
+                <label for="genero-1">
+                  <input type="checkbox" name="genero" id="genero-1" value="Fêmea">
+                  Fêmea
+                </label>
+              </div>
+              </div>
+            </div>
+            
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="tipo">Tipo de Pet</label>
+              <div class="col-md-5">
+                <select id="tipo" name="tipo" class="form-control">
+                  
+                  <% for(tipo of tiposLista) { %>
+                    <option value="<%= tipo.id %>"><%= tipo.nome %></option>
+                    <% let tipoX = tipo.id %>
+                  <% } %> 
+
+                </select>
+              </div>
+            </div>
+            
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="raca">Raça</label>
+              <div class="col-md-5">
+                <select id="raca" name="raca" class="form-control">                    
+                                
+                    <% for(raca of racasLista) { %>                                  
+                      <option value="<%= raca.id %>"><%= raca.nome %> (<%= raca.tipo.nome %>)</option>  
+                    <% } %>
+                  
+                </select>
+              </div>
+            </div>
+            
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit"></label>
+              <div class="col-md-4">
+                <button id="submit" name="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+            
+            </fieldset>
+            </form>  
+
+
+        </section>                   
+      </main>
+
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
